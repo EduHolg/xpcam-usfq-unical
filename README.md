@@ -1,5 +1,5 @@
 Full project description, specifications, architecture, and implementation details are available at:
-http://drive.google.com/file/d/1IozTMb-3N0sS5AZOYMnvUZZ27HZWEAA0/view
+https://drive.google.com/file/d/1h0KT03AcliuF-zdfoH5WrHe9L9oAnf2u/view?usp=sharing
 
 
 Project Name: XPCAM – In-Memory Compute CAM for Binary Neural Networks
@@ -61,5 +61,6 @@ None
 Digital Open-Source EDA Flow Familiarity:
 
 The USFQ VLSI team presents previous background using open-source EDA tools and digital and analog design flows. The design team is already familiar with the SkyWater 130nm PDK and standard analog full-custom workflows.
+
 
 
