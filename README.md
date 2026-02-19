@@ -5,8 +5,10 @@ http://drive.google.com/file/d/1IozTMb-3N0sS5AZOYMnvUZZ27HZWEAA0/view
 Project Name: XPCAM – In-Memory Compute CAM for Binary Neural Networks
 
 Design Team Identifier: XPCAM
+
 Primary Contact Email: egarzonc@asig.com.ec
 Secondary Contact Email: eholguin@usfq.edu.ec
+
 Active Design Team Members:
 - David Mendoza
 - Ignacio Torres
@@ -59,4 +61,5 @@ None
 Digital Open-Source EDA Flow Familiarity:
 
 The USFQ VLSI team presents previous background using open-source EDA tools and digital and analog design flows. The design team is already familiar with the SkyWater 130nm PDK and standard analog full-custom workflows.
+
 
