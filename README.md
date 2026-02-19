@@ -16,7 +16,9 @@ Active Design Team Members:
 - Nicolas Yanchapaxi
 
 Mentor(s): Esteban Garzon, Eduardo Holguín
+
 Country: Ecuador
+
 Design Type: Analog / Mixed Signal
 
 Special I/O Requirements:
@@ -56,4 +58,5 @@ DRC & LVS Verified Blocks:
 None
 
 Digital Open-Source EDA Flow Familiarity:
+
 The USFQ VLSI team presents previous background using open-source EDA tools and digital and analog design flows. The design team is already familiar with the SkyWater 130nm PDK and standard analog full-custom workflows.
