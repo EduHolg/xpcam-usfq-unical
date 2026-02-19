@@ -1,4 +1,3 @@
-Overleaf Project Report:
 Full project description, specifications, architecture, and implementation details are available at:
 http://drive.google.com/file/d/1IozTMb-3N0sS5AZOYMnvUZZ27HZWEAA0/view
 
@@ -60,3 +59,4 @@ None
 Digital Open-Source EDA Flow Familiarity:
 
 The USFQ VLSI team presents previous background using open-source EDA tools and digital and analog design flows. The design team is already familiar with the SkyWater 130nm PDK and standard analog full-custom workflows.
+
