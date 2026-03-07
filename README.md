@@ -50,7 +50,7 @@ Estimated Final Area:
 2000 um^2 (≈ 0.002 mm^2)
 
 Layout Completion:
-2 / 10 (≈ 20%)
+9 / 10 (≈ 90%)
 
 Digital Blocks in RTL:
 Not applicable
@@ -61,6 +61,7 @@ None
 Digital Open-Source EDA Flow Familiarity:
 
 The USFQ VLSI team presents previous background using open-source EDA tools and digital and analog design flows. The design team is already familiar with the SkyWater 130nm PDK and standard analog full-custom workflows.
+
 
 
 
