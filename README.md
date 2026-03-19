@@ -10,11 +10,12 @@ Primary Contact Email: egarzonc@asig.com.ec
 Secondary Contact Email: eholguin@usfq.edu.ec
 
 Active Design Team Members:
+- Joaquin Abad 
+- Nicolas Yanchapaxi
 - David Mendoza
 - Ignacio Torres
 - Pablo Nuñez
-- Joaquin Abad
-- Nicolas Yanchapaxi
+
 
 Mentor(s): Esteban Garzon, Eduardo Holguín
 
@@ -50,13 +51,13 @@ Estimated Final Area:
 2000 um^2 (≈ 0.002 mm^2)
 
 Layout Completion:
-9 / 10 (≈ 90%)
+10 / 10 (≈ 90%)
 
 Digital Blocks in RTL:
 Not applicable
 
 DRC & LVS Verified Blocks:
-All
+All (as for LVS, only the individual blocks)
 
 Digital Open-Source EDA Flow Familiarity:
 
