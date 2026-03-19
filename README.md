@@ -1,5 +1,5 @@
 Full project description, specifications, architecture, and implementation details are available at:
-https://drive.google.com/file/d/1h0KT03AcliuF-zdfoH5WrHe9L9oAnf2u/view?usp=sharing
+[https://drive.google.com/file/d/1h0KT03AcliuF-zdfoH5WrHe9L9oAnf2u/view?usp=sharing](https://docs.google.com/document/d/17l2dHVoVy6zrJuOQfi883xeRrZZZFOKOPPxPUkAVlX4/edit?usp=sharing)
 
 
 Project Name: XPCAM – In-Memory Compute CAM for Binary Neural Networks
@@ -37,9 +37,9 @@ N/A
 Xschem Schematic Completed:
 No
 
-Total I/O Pins: 11
-- 6 Digital
-- 3 Analog
+Total I/O Pins: 13
+- 10 Digital
+- 1 Analog
 - 1 VDD
 - 1 GND
 
@@ -56,7 +56,7 @@ Digital Blocks in RTL:
 Not applicable
 
 DRC & LVS Verified Blocks:
-None
+All
 
 Digital Open-Source EDA Flow Familiarity:
 
