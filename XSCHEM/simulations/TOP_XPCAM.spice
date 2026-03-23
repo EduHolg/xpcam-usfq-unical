@@ -1,0 +1,372 @@
+** sch_path: /home/designer/shared/XPCAM/XSCHEM/TOP_XPCAM.sch
+.subckt TOP_XPCAM EN_DEC EN CLK PC VEVAL IN A B C OUT_FIN VDD VSS
+*.PININFO EN_DEC:I EN:I CLK:I PC:I VEVAL:I IN:I A:I B:I C:I OUT_FIN:O VDD:B VSS:B
+x1 VDD EN CLK VSS IN OUT_FIN EN_DEC A B C VEVAL PC XPCAM
+.ends
+
+* expanding   symbol:  XPCAM.sym # of pins=12
+** sym_path: /home/designer/shared/XPCAM/XSCHEM/XPCAM.sym
+** sch_path: /home/designer/shared/XPCAM/XSCHEM/XPCAM.sch
+.subckt XPCAM VDD EN CLK VSS IN OUT_FIN EN_DEC A B C VEVAL PC
+*.PININFO EN:I VDD:B VSS:B CLK:I A:I B:I C:I IN:I PC:I VEVAL:I EN_DEC:I OUT_FIN:O
+x3 net2 net10 net8 net4 net6 net14 net17 net12 net5 net15 net16 net13 net3 net7 net9 net11 VDD IN VSS net18 shiftregn
+x40 VDD net20 CLK net1 net21 net22 net23 net24 net25 net26 net27 OUT_FIN VSS OUTPUT
+x5 net4 net8 net16 net11 net13 net12 net17 net19 net3 net6 net7 net10 net15 net14 net5 net35 net9 net2 VDD VSS VEVAL PC net28
++ net36 net37 net29 net38 net30 net31 net39 net32 net40 net33 net41 net34 net42 array_8x8
+x26 VDD VEVAL VSS net20 net19 sense
+x27 VDD VEVAL VSS net21 net28 sense
+x28 VDD VEVAL VSS net22 net29 sense
+x29 VDD VEVAL VSS net23 net30 sense
+x30 VDD VEVAL VSS net24 net31 sense
+x31 VDD VEVAL VSS net25 net32 sense
+x32 VDD VEVAL VSS net26 net33 sense
+x33 VDD VEVAL VSS net27 net34 sense
+x1 VDD net35 net36 net37 net38 C A B net39 net40 VSS net41 net42 EN_DEC DEC3_8
+x2 EN VDD CLK VSS net18 input
+x4 VDD net1 EN VSS inv
+.ends
+
+
+* expanding   symbol:  shiftregn.sym # of pins=20
+** sym_path: /home/designer/shared/XPCAM/XSCHEM/shiftregn.sym
+** sch_path: /home/designer/shared/XPCAM/XSCHEM/shiftregn.sch
+.subckt shiftregn Q8_n Q4_n Q5_n Q7_n Q6_n Q2_n Q1_n Q3_n Q7 Q2 Q1 Q3 Q8 Q6 Q5 Q4 VDD IN VSS CLK_MOD
+*.PININFO IN:I Q1:O CLK_MOD:B VDD:B VSS:B Q2:O Q3:O Q4:O Q5:O Q6:O Q7:O Q8:O Q1_n:O Q2_n:O Q3_n:O Q4_n:O Q5_n:O Q6_n:O Q7_n:O
+*+ Q8_n:O
+x17 CLK_MOD Q1_n VDD Q1 IN VSS flipflopn
+x1 CLK_MOD Q3_n VDD Q3 Q2 VSS flipflopn
+x3 CLK_MOD Q2_n VDD Q2 Q1 VSS flipflopn
+x2 CLK_MOD Q4_n VDD Q4 Q3 VSS flipflopn
+x4 CLK_MOD Q6_n VDD Q6 Q5 VSS flipflopn
+x5 CLK_MOD Q5_n VDD Q5 Q4 VSS flipflopn
+x6 CLK_MOD Q7_n VDD Q7 Q6 VSS flipflopn
+x7 CLK_MOD Q8_n VDD Q8 Q7 VSS flipflopn
+.ends
+
+
+* expanding   symbol:  OUTPUT.sym # of pins=13
+** sym_path: /home/designer/shared/XPCAM/XSCHEM/OUTPUT.sym
+** sch_path: /home/designer/shared/XPCAM/XSCHEM/OUTPUT.sch
+.subckt OUTPUT VDD D1 CLK S0 D2 D3 D4 D5 D6 D7 D8 OUT VSS
+*.PININFO D1:I VDD:B VSS:B OUT:O D2:I D3:I D4:I D5:I D6:I D7:I D8:I S0:I CLK:I
+MN5 net3 S0 net6 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP5 net1 net4 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+x3 VDD net5 S0 VSS inv
+MP6 net2 VSS VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MP7 net3 net5 net1 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MP8 net3 S0 net2 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MN6 net3 net5 net7 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN7 net6 net4 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN8 net7 VSS VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+x4 VDD net8 net3 VSS inv
+x5 CLK VDD net4 D1 VSS flipflop
+x6 CLK VDD net9 net8 VSS flipflop
+MN9 net12 S0 net15 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP9 net10 net13 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+x7 VDD net14 S0 VSS inv
+MP10 net11 net9 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MP11 net12 net14 net10 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MP12 net12 S0 net11 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MN10 net12 net14 net16 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN11 net15 net13 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN12 net16 net9 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+x8 VDD net17 net12 VSS inv
+x9 CLK VDD net13 D2 VSS flipflop
+x10 CLK VDD net18 net17 VSS flipflop
+MN13 net21 S0 net24 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP13 net19 net22 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+x11 VDD net23 S0 VSS inv
+MP14 net20 net18 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MP15 net21 net23 net19 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MP16 net21 S0 net20 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MN14 net21 net23 net25 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN15 net24 net22 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN16 net25 net18 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+x12 VDD net26 net21 VSS inv
+x13 CLK VDD net22 D3 VSS flipflop
+x14 CLK VDD net27 net26 VSS flipflop
+MN17 net30 S0 net33 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP17 net28 net31 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+x17 VDD net32 S0 VSS inv
+MP18 net29 net27 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MP19 net30 net32 net28 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MP20 net30 S0 net29 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MN18 net30 net32 net34 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN19 net33 net31 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN20 net34 net27 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+x18 VDD net35 net30 VSS inv
+x19 CLK VDD net31 D4 VSS flipflop
+x20 CLK VDD net36 net35 VSS flipflop
+MN21 net39 S0 net42 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP21 net37 net40 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+x21 VDD net41 S0 VSS inv
+MP22 net38 net36 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MP23 net39 net41 net37 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MP24 net39 S0 net38 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MN22 net39 net41 net43 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN23 net42 net40 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN24 net43 net36 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+x22 VDD net44 net39 VSS inv
+x23 CLK VDD net40 D5 VSS flipflop
+x24 CLK VDD net45 net44 VSS flipflop
+MN25 net48 S0 net51 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP25 net46 net49 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+x25 VDD net50 S0 VSS inv
+MP26 net47 net45 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MP27 net48 net50 net46 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MP28 net48 S0 net47 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MN26 net48 net50 net52 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN27 net51 net49 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN28 net52 net45 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+x26 VDD net53 net48 VSS inv
+x27 CLK VDD net49 D6 VSS flipflop
+x28 CLK VDD net54 net53 VSS flipflop
+MN29 net57 S0 net60 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP29 net55 net58 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+x29 VDD net59 S0 VSS inv
+MP30 net56 net54 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MP31 net57 net59 net55 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MP32 net57 S0 net56 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MN30 net57 net59 net61 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN31 net60 net58 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN32 net61 net54 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+x30 VDD net62 net57 VSS inv
+x31 CLK VDD net58 D7 VSS flipflop
+x32 CLK VDD net63 net62 VSS flipflop
+MN33 net66 S0 net69 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP33 net64 net67 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+x33 VDD net68 S0 VSS inv
+MP34 net65 net63 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MP35 net66 net68 net64 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MP36 net66 S0 net65 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MN34 net66 net68 net70 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN35 net69 net67 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN36 net70 net63 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+x34 VDD net71 net66 VSS inv
+x35 CLK VDD net67 D8 VSS flipflop
+x36 CLK VDD OUT net71 VSS flipflop
+.ends
+
+
+* expanding   symbol:  array_8x8.sym # of pins=44
+** sym_path: /home/designer/shared/XPCAM/XSCHEM/array_8x8.sym
+** sch_path: /home/designer/shared/XPCAM/XSCHEM/array_8x8.sch
+.subckt array_8x8 SL_6_n SL_4_n SL_0_n SL_3 SL_2 SL_2_n SL_0 ML_0 SL_7 SL_5_n SL_5 SL_3_n SL_1 SL_1_n SL_6 WL_0 SL_4 SL_7_n VDD
++ VSS VEVAL PC ML_1 WL_1 WL_2 ML_2 WL_3 ML_3 ML_4 WL_4 ML_5 WL_5 ML_6 WL_6 ML_7 WL_7
+*.PININFO WL_0:B ML_0:B VDD:B VSS:B PC:B WL_1:B ML_1:B WL_2:B ML_2:B WL_3:B ML_3:B WL_4:B ML_4:B WL_5:B ML_5:B WL_6:B ML_6:B
+*+ WL_7:B ML_7:B SL_7:B SL_7_n:B SL_6:B SL_5:B SL_4:B SL_3:B SL_2:B SL_1:B SL_0:B SL_6_n:B SL_5_n:B SL_4_n:B SL_3_n:B SL_2_n:B SL_1_n:B
+*+ SL_0_n:B VEVAL:I
+Xwc81 SL_3_n SL_1_n SL_2_n SL_0_n SL_7 SL_6 SL_5 SL_4 SL_3 SL_2 SL_1 SL_0 SL_7_n SL_6_n SL_5_n SL_4_n WL_0 ML_0 VDD VEVAL VSS PC
++ word_cell_8
+Xwc82 SL_3_n SL_1_n SL_2_n SL_0_n SL_7 SL_6 SL_5 SL_4 SL_3 SL_2 SL_1 SL_0 SL_7_n SL_6_n SL_5_n SL_4_n WL_1 ML_1 VDD VEVAL VSS PC
++ word_cell_8
+Xwc83 SL_3_n SL_1_n SL_2_n SL_0_n SL_7 SL_6 SL_5 SL_4 SL_3 SL_2 SL_1 SL_0 SL_7_n SL_6_n SL_5_n SL_4_n WL_2 ML_2 VDD VEVAL VSS PC
++ word_cell_8
+Xwc84 SL_3_n SL_1_n SL_2_n SL_0_n SL_7 SL_6 SL_5 SL_4 SL_3 SL_2 SL_1 SL_0 SL_7_n SL_6_n SL_5_n SL_4_n WL_3 ML_3 VDD VEVAL VSS PC
++ word_cell_8
+Xwc85 SL_3_n SL_1_n SL_2_n SL_0_n SL_7 SL_6 SL_5 SL_4 SL_3 SL_2 SL_1 SL_0 SL_7_n SL_6_n SL_5_n SL_4_n WL_4 ML_4 VDD VEVAL VSS PC
++ word_cell_8
+Xwc86 SL_3_n SL_1_n SL_2_n SL_0_n SL_7 SL_6 SL_5 SL_4 SL_3 SL_2 SL_1 SL_0 SL_7_n SL_6_n SL_5_n SL_4_n WL_5 ML_5 VDD VEVAL VSS PC
++ word_cell_8
+Xwc87 SL_3_n SL_1_n SL_2_n SL_0_n SL_7 SL_6 SL_5 SL_4 SL_3 SL_2 SL_1 SL_0 SL_7_n SL_6_n SL_5_n SL_4_n WL_6 ML_6 VDD VEVAL VSS PC
++ word_cell_8
+Xwc88 SL_3_n SL_1_n SL_2_n SL_0_n SL_7 SL_6 SL_5 SL_4 SL_3 SL_2 SL_1 SL_0 SL_7_n SL_6_n SL_5_n SL_4_n WL_7 ML_7 VDD VEVAL VSS PC
++ word_cell_8
+.ends
+
+
+* expanding   symbol:  sense.sym # of pins=5
+** sym_path: /home/designer/shared/XPCAM/XSCHEM/sense.sym
+** sch_path: /home/designer/shared/XPCAM/XSCHEM/sense.sch
+.subckt sense VDD sense VSS ML_sens ML
+*.PININFO sense:I VDD:B VSS:B ML:I ML_sens:O
+x1 VDD net3 net2 VSS inv
+MP0 net2 net5 net1 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MN0 net2 net4 net1 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP1 net2 net4 ML VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MN1 net2 net5 ML VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN2 net7 net6 VSS VSS sg13_lv_nmos w=2.96u l=130.00n ng=1 m=1
+MP2 net7 net6 VDD VDD sg13_lv_pmos w=4.48u l=130.00n ng=1 m=1
+MP3 net4 net5 VDD VDD sg13_lv_pmos w=4.48u l=130.00n ng=1 m=1
+MN3 net4 net5 VSS VSS sg13_lv_nmos w=2.96u l=130.00n ng=1 m=1
+x2 VDD net1 net3 VSS inv
+x3 VDD net6 sense VSS inv
+x4 VDD net5 net7 VSS inv
+x5 VDD ML_sens net3 VSS inv
+.ends
+
+
+* expanding   symbol:  DEC3_8.sym # of pins=14
+** sym_path: /home/designer/shared/XPCAM/XSCHEM/DEC3_8.sym
+** sch_path: /home/designer/shared/XPCAM/XSCHEM/DEC3_8.sch
+.subckt DEC3_8 VDD D0 D1 D2 D3 C A B D4 D5 VSS D6 D7 EN_DEC
+*.PININFO D0:O A:I VDD:B VSS:B B:I C:I D1:O D2:O D3:O D4:O D5:O D6:O D7:O EN_DEC:I
+x1 VDD net2 net3 net4 net1 VSS AND_3
+x2 VDD net2 net3 C D1 VSS AND_3
+x3 VDD net2 B net4 D2 VSS AND_3
+x4 VDD net2 B C D3 VSS AND_3
+x5 VDD A net3 net4 D4 VSS AND_3
+x6 VDD A net3 C D5 VSS AND_3
+x7 VDD A B net4 D6 VSS AND_3
+x8 VDD A B C D7 VSS AND_3
+x14 VDD EN_DEC net1 net5 VSS NAND
+x11 VDD net2 A VSS my_inv
+x9 VDD net3 B VSS my_inv
+x10 VDD net4 C VSS my_inv
+x12 VDD D0 net5 VSS my_inv
+.ends
+
+
+* expanding   symbol:  input.sym # of pins=5
+** sym_path: /home/designer/shared/XPCAM/XSCHEM/input.sym
+** sch_path: /home/designer/shared/XPCAM/XSCHEM/input.sch
+.subckt input EN VDD CLK VSS CLK_MOD
+*.PININFO CLK_MOD:O EN:I VDD:B VSS:B CLK:I
+x1 VDD net4 CLK net2 VSS NAND
+x2 VDD net3 net1 net4 VSS NAND
+x3 VDD net1 CLK_MOD VSS cont
+x4 VDD net3 EN VSS my_inv
+x5 VDD CLK_MOD net2 VSS my_inv
+.ends
+
+
+* expanding   symbol:  inv.sym # of pins=4
+** sym_path: /home/designer/shared/XPCAM/XSCHEM/inv.sym
+** sch_path: /home/designer/shared/XPCAM/XSCHEM/inv.sch
+.subckt inv VDD Y A VSS
+*.PININFO Y:O A:I VDD:B VSS:B
+MN0 Y A VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP0 Y A VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+.ends
+
+
+* expanding   symbol:  flipflopn.sym # of pins=6
+** sym_path: /home/designer/shared/XPCAM/XSCHEM/flipflopn.sym
+** sch_path: /home/designer/shared/XPCAM/XSCHEM/flipflopn.sch
+.subckt flipflopn CLK Q_n VDD Q D VSS
+*.PININFO D:I Q:O CLK:B VDD:B VSS:B Q_n:O
+MN0 net1 net7 net2 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP0 net1 CLK net2 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MN1 net2 CLK net3 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP1 net2 net7 net3 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MN2 net4 CLK net5 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP2 net4 net7 net5 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MN3 net5 net7 net6 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP3 net5 CLK net6 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+x8 VDD net1 D VSS my_inv
+x1 VDD net4 net2 VSS my_inv
+x2 VDD net7 CLK VSS my_inv
+x3 VDD net3 net4 VSS my_inv
+x4 VDD Q_n net5 VSS my_inv
+x5 VDD Q Q_n VSS my_inv
+x6 VDD net6 Q_n VSS my_inv
+.ends
+
+
+* expanding   symbol:  flipflop.sym # of pins=5
+** sym_path: /home/designer/shared/XPCAM/XSCHEM/flipflop.sym
+** sch_path: /home/designer/shared/XPCAM/XSCHEM/flipflop.sch
+.subckt flipflop CLK VDD Q D VSS
+*.PININFO D:I Q:O CLK:B VDD:B VSS:B
+MN0 net1 net8 net2 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP0 net1 CLK net2 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MN1 net2 CLK net3 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP1 net2 net8 net3 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+x2 VDD net1 D VSS inv
+x3 VDD net4 net2 VSS inv
+x4 VDD net3 net4 VSS inv
+MN2 net4 CLK net5 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP2 net4 net8 net5 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MN3 net5 net8 net6 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP3 net5 CLK net6 VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+x5 VDD net7 net5 VSS inv
+x6 VDD net6 net7 VSS inv
+x8 VDD Q net7 VSS inv
+x9 VDD net8 CLK VSS inv
+.ends
+
+
+* expanding   symbol:  word_cell_8.sym # of pins=22
+** sym_path: /home/designer/shared/XPCAM/XSCHEM/word_cell_8.sym
+** sch_path: /home/designer/shared/XPCAM/XSCHEM/word_cell_8.sch
+.subckt word_cell_8 SL_3_n SL_1_n SL_2_n SL_0_n SL_7 SL_6 SL_5 SL_4 SL_3 SL_2 SL_1 SL_0 SL_7_n SL_6_n SL_5_n SL_4_n WL ML VDD
++ VEVAL VSS PC
+*.PININFO VSS:B VDD:B WL:B ML:B SL_7:B SL_6:B SL_5:B SL_4:B SL_3:B SL_2:B SL_1:B SL_0:B SL_7_n:B SL_6_n:B SL_5_n:B SL_4_n:B
+*+ SL_3_n:B SL_2_n:B SL_1_n:B SL_0_n:B PC:I VEVAL:I
+Xbc1 WL SL_7 SL_7_n VDD ML VEVAL VSS bitcell
+Xbc2 WL SL_6 SL_6_n VDD ML VEVAL VSS bitcell
+Xbc3 WL SL_5 SL_5_n VDD ML VEVAL VSS bitcell
+Xbc4 WL SL_4 SL_4_n VDD ML VEVAL VSS bitcell
+Xbc5 WL SL_3 SL_3_n VDD ML VEVAL VSS bitcell
+Xbc6 WL SL_2 SL_2_n VDD ML VEVAL VSS bitcell
+Xbc7 WL SL_1 SL_1_n VDD ML VEVAL VSS bitcell
+Xbc8 WL SL_0 SL_0_n VDD ML VEVAL VSS bitcell
+MP0 ML PC VDD VDD sg13_lv_pmos w=2.24u l=130.00n ng=1 m=1
+.ends
+
+
+* expanding   symbol:  AND_3.sym # of pins=6
+** sym_path: /home/designer/shared/XPCAM/XSCHEM/AND_3.sym
+** sch_path: /home/designer/shared/XPCAM/XSCHEM/AND_3.sch
+.subckt AND_3 VDD A B C Y VSS
+*.PININFO A:I VDD:B VSS:B B:I C:I Y:O
+MN0 net2 B net3 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP0 net1 A VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MN1 net1 A net2 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN2 net3 C VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP1 net1 B VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MP2 net1 C VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MN3 Y net1 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP3 Y net1 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+.ends
+
+
+* expanding   symbol:  NAND.sym # of pins=5
+** sym_path: /home/designer/shared/XPCAM/XSCHEM/NAND.sym
+** sch_path: /home/designer/shared/XPCAM/XSCHEM/NAND.sch
+.subckt NAND VDD B A Y VSS
+*.PININFO Y:O A:I VDD:B VSS:B B:I
+MN0 Y A net1 VSS sg13_lv_nmos w=0.74u l=130.00n ng=1 m=1
+MP0 Y A VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MP1 Y B VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+MN1 net1 B VSS VSS sg13_lv_nmos w=0.74u l=130.00n ng=1 m=1
+.ends
+
+
+* expanding   symbol:  my_inv.sym # of pins=4
+** sym_path: /home/designer/shared/XPCAM/XSCHEM/my_inv.sym
+** sch_path: /home/designer/shared/XPCAM/XSCHEM/my_inv.sch
+.subckt my_inv VDD Y A VSS
+*.PININFO Y:O A:I VDD:B VSS:B
+MN0 Y A VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MP0 Y A VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1
+.ends
+
+
+* expanding   symbol:  cont.sym # of pins=4
+** sym_path: /home/designer/shared/XPCAM/XSCHEM/cont.sym
+** sch_path: /home/designer/shared/XPCAM/XSCHEM/cont.sch
+.subckt cont VDD OUT CLK VSS
+*.PININFO OUT:O CLK:B VDD:B VSS:B
+x1 CLK net2 VDD net1 net2 VSS flipflopn
+x2 net1 net3 VDD net4 net3 VSS flipflopn
+x3 net4 net5 VDD net6 net5 VSS flipflopn
+x5 VDD net6 net4 net1 OUT VSS AND_3
+.ends
+
+
+* expanding   symbol:  bitcell.sym # of pins=7
+** sym_path: /home/designer/shared/XPCAM/XSCHEM/bitcell.sym
+** sch_path: /home/designer/shared/XPCAM/XSCHEM/bitcell.sch
+.subckt bitcell WL SL SL_n VDD ML VEVAL VSS
+*.PININFO SL:I SL_n:I WL:I ML:B VEVAL:I VDD:B VSS:B
+MN1 SL WL D_n VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN2 SL_n WL D VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN3 net1 D_n SL VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN4 net1 D SL_n VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN5 ML net1 net2 VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+MN6 net2 VEVAL VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1
+X1 VDD D D_n VSS my_inv
+X2 VDD D_n D VSS my_inv
+.ends
+
