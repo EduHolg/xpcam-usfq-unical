@@ -38,11 +38,13 @@ N/A
 Xschem Schematic Completed:
 No
 
-Total I/O Pins: 13
-- 10 Digital
+Total I/O Pins: 14
+- 9 Digital
 - 1 Analog
 - 1 VDD
 - 1 GND
+- 1 VDDIO
+- 1 VSSIO
 
 Estimated Core Area:
 0.002 mm^2
@@ -51,7 +53,7 @@ Estimated Final Area:
 2000 um^2 (≈ 0.002 mm^2)
 
 Layout Completion:
-10 / 10 (≈ 90%)
+10 / 10 (≈ 100%)
 
 Digital Blocks in RTL:
 Not applicable
